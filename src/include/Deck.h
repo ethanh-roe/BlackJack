@@ -4,24 +4,32 @@
 #include <vector>
 #include <random>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-enum facecards{
-    A, // Ace
-    K, // King
-    Q, // Queen
-    J  // Jack
+enum facecard{
+    A,
+    K,
+    Q,
+    J
 };
 
+typedef struct Card{
+    string suit;
+    string rank;
+
+} Card;
+
 class Deck{
+    private:
+    vector<Card> deck;
+
     public:
-        vector<int> deck;
 
         void initDeck();
         void shuffle();
-        int getCard();
+        Card getCard();
         void printDeck();
 };
-
 #endif

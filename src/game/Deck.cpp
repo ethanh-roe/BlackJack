@@ -1,15 +1,16 @@
 #include "../include/Deck.h"
 
-vector<int> deck;
-
-
 void Deck::initDeck(){
-    deck = {
-        A, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
-        A, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
-        A, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
-        A, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K
-    };
+    string suits[4] = {"hearts", "diamonds", "clubs", "spades"};
+    string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 13; j++){
+            Card c;
+            c = (Card){.suit = suits[i], .rank = ranks[j]};
+            deck.push_back(c);
+        }
+    }
 }
 
 void Deck::shuffle(){
@@ -19,17 +20,17 @@ void Deck::shuffle(){
     }
 }
 
-int Deck::getCard(){
-    int card = deck.front();
+Card Deck::getCard(){
+    Card c = deck.front();
     deck.erase(deck.begin());
-    return card;
+    return c;
 }
 
 void Deck::printDeck(){
     int t=0;
-	for (auto i : deck) {
-		cout << i << " ,";
+	for (Card i : deck) {
+		cout << i.rank << " of " << i.suit << ", ";
 		t++;
-		if (t % 13 == 0) cout << endl;
 	}
+    cout << endl;
 }
