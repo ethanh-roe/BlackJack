@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 
+#include "include/Deck.h"
+
 using namespace std;
 
 sf::RectangleShape drawBackground(){
@@ -84,10 +86,18 @@ int main()
     
     sf::Thread thread(&renderingThread, &window);
     thread.launch();
-    
+
+    Deck* deck = new Deck();
+    deck->initDeck();
     // run the program as long as the window is open
     while (window.isOpen())
     {
+        
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num1))
+        {
+            deck->shuffle();
+            cout << "shuffled" << endl;
+        }
         
     }
 
