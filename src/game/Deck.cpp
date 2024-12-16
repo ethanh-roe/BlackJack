@@ -1,13 +1,11 @@
 #include "../include/Deck.h"
 
 void Deck::initDeck(){
-    string suits[4] = {"hearts", "diamonds", "clubs", "spades"};
-    string ranks[13] = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    int ranks[13] = {A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K};
 
     for(int i = 0; i < 4; i++){
         for(int j = 0; j < 13; j++){
-            Card c;
-            c = (Card){.suit = suits[i], .rank = ranks[j]};
+            Card c = {.rank = ranks[j]};
             deck.push_back(c);
         }
     }
@@ -29,7 +27,7 @@ Card Deck::getCard(){
 void Deck::printDeck(){
     int t=0;
 	for (Card i : deck) {
-		cout << i.rank << " of " << i.suit << ", ";
+		cout << i.rank << ", ";
 		t++;
 	}
     cout << endl;

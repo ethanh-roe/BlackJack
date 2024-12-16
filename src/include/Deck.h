@@ -16,8 +16,7 @@ enum facecard{
 };
 
 typedef struct Card{
-    string suit;
-    string rank;
+    int rank;
 
 } Card;
 
