@@ -7,12 +7,12 @@
 using namespace std;
 
 class Player{
-    private:
+private:
     vector<Card> hand;
     int bet;
     int chips;
 
-    public:
+public:
     Player();
     Player(int initChips);
 

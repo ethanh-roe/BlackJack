@@ -22,14 +22,13 @@ typedef struct Card{
 } Card;
 
 class Deck{
-    private:
+private:
     vector<Card> deck;
 
-    public:
-
-        void initDeck();
-        void shuffle();
-        Card getCard();
-        void printDeck();
+public:
+    void initDeck();
+    void shuffle();
+    Card getCard();
+    void printDeck();
 };
 #endif
