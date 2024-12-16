@@ -1,9 +1,5 @@
 #include "../include/Deck.h"
 
-int A = 1;
-int K = 10;
-int Q = 10;
-int J = 10;
 vector<int> deck;
 
 

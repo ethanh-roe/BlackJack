@@ -7,6 +7,13 @@
 
 using namespace std;
 
+enum facecards{
+    A, // Ace
+    K, // King
+    Q, // Queen
+    J  // Jack
+};
+
 class Deck{
     public:
         vector<int> deck;
