@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(SFML)
 
 
 # Define executable and link libs
-add_executable(BlackJack src/main.cpp)
+add_executable(BlackJack src/main.cpp src/game/Deck.cpp)
 
 # Add include dir for headers
 target_include_directories(BlackJack PRIVATE ${CMAKE_SOURCE_DIR}/include)
